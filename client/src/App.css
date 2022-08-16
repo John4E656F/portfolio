@@ -1,5 +1,18 @@
 
 a {
   text-decoration: none;
-  
 }
+
+.navlink {
+  color: rgb(160, 170, 19);
+  text-size-adjust: 10px;
+  text-transform: capitalize;
+  font-size: 20px;
+  transition: 1s;
+}
+
+.navlink:hover {
+  font-size: 35px;
+  color: rgb(241, 255, 44);
+}
+

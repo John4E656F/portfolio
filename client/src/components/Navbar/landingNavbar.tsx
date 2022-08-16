@@ -10,6 +10,10 @@ import {
   useTheme
 } from '@mui/material'
 
+import logo  from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
+
+
 
 
 export default function ButtonAppBar() {
@@ -17,14 +21,14 @@ const theme = useTheme();
 
   return (
 
-      <AppBar position="static" >
+      <AppBar position="static" color='transparent'>
         <Toolbar >
           <Container maxWidth="xl" 
             sx={{
               display: 'flex',
               justifyContent: 'space-evenly'
             }}>
-            <img src="{logo}" alt="Logo" />
+            <img src={logo} alt="Logo" width={60} height={60}/>
             <Container maxWidth="sm" >
               <List>
                 <ListItem alignItems="flex-start"
@@ -33,14 +37,14 @@ const theme = useTheme();
                     justifyContent: 'space-between',
 
                   }}>
-                  <a href='/home'>Home</a>
-                  <a href='/works'>Works</a>
-                  <a href='/cv'>CV</a>
-                  <a href='/contact'>Contact</a>
+                  <a className='navlink' href='/home'>Home</a>
+                  <a className='navlink' href='/works'>Works</a>
+                  <a className='navlink' href='/cv'>CV</a>
+                  <a className='navlink' href='/contact'>Contact</a>
                 </ListItem>
               </List>
             </Container>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit">Let's Chat</Button>
           </Container>
         </Toolbar>
       </AppBar>
