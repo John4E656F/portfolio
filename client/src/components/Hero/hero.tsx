@@ -7,7 +7,7 @@ import {
   Button
  } from '@mui/material'
 
-import pfp from '../../assets/John.png';
+import pfp from '../../assets/img/John.png';
 
 export default function Hero() {
 
