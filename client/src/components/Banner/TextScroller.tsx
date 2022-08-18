@@ -3,14 +3,11 @@ import { useSpring, animated } from "react-spring";
 
 import {
     Grid,
-    Stack,
-    Slide,
-    LinearProgress,
-    Box, 
-    List,
-    ListItem,
-    Theme
-  } from '@mui/material';
+
+} from '@mui/material';
+
+import ReactIcon from '../../assets/iconsPng/react.png';
+
 
 
 const style = {
@@ -49,7 +46,7 @@ const TextScroller = () => {
             text: 'WEEEEEEE',
         },
         {
-            icon: '',
+            icon: ReactIcon,
             text: 'React',
         },
         {

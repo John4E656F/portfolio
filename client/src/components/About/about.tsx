@@ -10,7 +10,15 @@ import {
     Button
    } from '@mui/material'
 
+
+
 export default function About() {
+
+    const cardItems: {}[] = [
+        {
+            text: '',
+        }
+    ]
 
     return (
         <>
