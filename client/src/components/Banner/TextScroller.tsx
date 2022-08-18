@@ -7,17 +7,25 @@ import {
 } from '@mui/material';
 
 import ReactIcon from '../../assets/iconsPng/react.png';
-
+import Nodejs from '../../assets/iconsPng/nodejs.png';
+import Typescript from '../../assets/iconsPng/typescript.png';
+import Js from '../../assets/iconsPng/js.png';
+import Css from '../../assets/iconsPng/css.png';
+import Html from '../../assets/iconsPng/html.png';
+import Git from '../../assets/iconsPng/git.png';
+import Github from '../../assets/iconsPng/github.png';
+import Bootstrap from '../../assets/iconsPng/bootstrap.png';
+import Tailwind from '../../assets/iconsPng/tailwind.png';
+import Npm from '../../assets/iconsPng/npm.png';
+import Mongodb from '../../assets/iconsPng/mongodb.png';
 
 
 const style = {
-    background: 'url("https://picsum.photos/200/300") center center / cover no-repeat',
-    padding: '10px',
-    width: '300px',
-    height: '200px',
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 30,
   }
   
   const textStyle = {
@@ -30,9 +38,9 @@ const TextScroller = () => {
     const [key, setKey] = useState(1);
 
     const scrolling = useSpring({
-        from: { translateX: "-150%" },
-        to: { translateX: "100%" },
-        config: { duration: 5000 },
+        from: { translateX: "-100%" },
+        to: { translateX: "40%" },
+        config: { duration: 10000 },
         loop: true,
         reset: true,
         onRest: () => {
@@ -42,30 +50,47 @@ const TextScroller = () => {
 
     const item: {icon: string, text: string}[] = [
         {
-            icon: '',
-            text: 'WEEEEEEE',
-        },
-        {
             icon: ReactIcon,
             text: 'React',
         },
         {
-            icon: '',
+            icon: Nodejs,
             text: 'NodeJS',
         },
         {
-            icon: '',
-            text: 'Html',
+            icon: Typescript,
+            text: 'Typescript',
         },
         {
-            icon: '',
-            text: 'CSS',
-        },        {
-            icon: '',
+            icon: Js,
             text: 'JS',
         },
         {
-            icon: '',
+            icon: Css,
+            text: 'Css',
+        },
+        {
+            icon: Html,
+            text: 'Html',
+        },        
+        {
+            icon: Git,
+            text: 'Git',
+        },
+        {
+            icon: Github,
+            text: 'Github',
+        },
+        {
+            icon: Bootstrap,
+            text: 'Bootstrap',
+        },
+        {
+            icon: Tailwind,
+            text: 'Tailwind',
+        },
+        {
+            icon: Mongodb,
             text: 'MongoDB',
         } 
     ] 
@@ -77,18 +102,19 @@ const TextScroller = () => {
             <div>
                 <AnimateGrid style={{...textStyle, ...scrolling}} 
                 sx={{
+                    width: '100%',
                     display: 'flex',
-                    gap: 5,
+                    
                 }}>
                 { 
                     item.map ((item, key, obj) => {
 
                     return( 
                         
-                        <div key={key}>
-                            <Grid item width={400}>
-                                {item.icon}
-                                {item.text}
+                        <div key={key} style={{...style}}>
+                            <Grid item >{item.text}</Grid>
+                            <Grid item sx={{overflow: 'hidden', maxHeight: '70px',}}>  
+                                <img src={item.icon} alt={item.text} style={{}}/>
                             </Grid>
                         </div>
                     )})

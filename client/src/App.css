@@ -2,6 +2,13 @@
   overflow-x: hidden;
 }
 
+body {
+  background-image: url('./assets/img/bg.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+}
+
 a {
   text-decoration: none;
 }

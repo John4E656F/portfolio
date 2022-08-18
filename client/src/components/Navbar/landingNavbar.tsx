@@ -61,7 +61,7 @@ const theme = useTheme();
                 </ListItem>
               </List>
             </Container>
-            <Button color="inherit">Let's Chat</Button>
+            <Button >Let's Chat</Button>
           </Container>
         </Toolbar>
       </AppBar>
