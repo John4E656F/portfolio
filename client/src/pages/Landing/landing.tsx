@@ -7,6 +7,7 @@ import About from '../../components/About/about';
 import Works from '../../components/Works/Works';
 import Footer from '../../components/Footer/footer';
 
+
 const LandingScreen = () => {
 
 
@@ -18,6 +19,7 @@ const LandingScreen = () => {
 				<About />
 				<Works />
 			<Footer />
+
 		</>
 	);
 };
