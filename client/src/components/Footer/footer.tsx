@@ -23,13 +23,17 @@ export default function Footer() {
                     gap: 10,
                 }}>
                     <Grid item >
-                        <img alt='John Andres LinkedIn Profile' src={Linkedin} />
+                        <a href='https://www.linkedin.com/in/john4e656f/' target='blank' >
+                            <img alt='John Andres LinkedIn Profile' src={Linkedin} />
+                        </a>
                     </Grid>
                     <Grid item>
                         Made with ❤️ by John Andres 
                     </Grid>
                     <Grid item >
-                        <img alt='John Andres Github Profile' src={Github} style={{width: '35px'}}/>
+                        <a href='https://github.com/John4E656F' target='blank'>
+                            <img alt='John Andres Github Profile' src={Github} style={{width: '35px'}}/>
+                        </a>
                     </Grid>
                 </Grid>
             </Container>
