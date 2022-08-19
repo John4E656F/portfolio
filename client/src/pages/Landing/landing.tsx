@@ -4,6 +4,8 @@ import Navbar from '../../components/Navbar/landingNavbar';
 import Hero from '../../components/Hero/hero';
 import Banner from '../../components/Banner/banner';
 import About from '../../components/About/about';
+import Works from '../../components/Works/Works';
+import Footer from '../../components/Footer/footer';
 
 const LandingScreen = () => {
 
@@ -14,6 +16,8 @@ const LandingScreen = () => {
                 <Hero />
 				<Banner />
 				<About />
+				<Works />
+			<Footer />
 		</>
 	);
 };

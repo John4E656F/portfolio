@@ -14,11 +14,7 @@ import {
 
 export default function About() {
 
-    const cardItems: {}[] = [
-        {
-            text: '',
-        }
-    ]
+
 
     return (
         <>
@@ -31,24 +27,13 @@ export default function About() {
                 </Typography>
             <Grid container sx={{
                 backgroundColor: 'red',
+                mt: '20px',
             }}>
                 
-                <Grid item sx={{backgroundColor :'blue',}}>
-                    <Card sx={{ maxWidth: '345',}}>
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image="/static/images/cards/contemplative-reptile.jpg"
-                                alt="green iguana"
-                            />
-                            <CardContent>
-                                <Typography sx={{ width:"100%", mt: 8 }} variant="h3" component="h3" color="text.primary">
-                                Hi 🖖
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                <Grid item sx={{backgroundColor :'blue', }}>
+                    <Typography variant="h4">
+                    I'm a junior Web Developer looking for an internship or an employment, I'm very passionate about IT & I love discovering new Tech. I can quickly learn a new skill, and adapt in different situation needed.
+                    </Typography>
                 </Grid>
             </Grid>
             
