@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 
 import { 
   Card,
@@ -12,6 +12,7 @@ import Thriller from '../Model/scene';
 import pfp from '../../assets/img/John.png';
 
 export default function Hero() {
+
 
   return (
     <Container maxWidth="xl"
@@ -52,7 +53,7 @@ export default function Hero() {
       <Card 
       sx={{
         flex: 'none',
-        width: 500,
+        width: 'auto',
         right: '100%',
         height: 565,
         backgroundColor: 'transparent',
@@ -62,6 +63,7 @@ export default function Hero() {
         // },
         paddingBottom: -10,
       }} >
+
         <Thriller />
         {/* <img src={`${pfp}`} loading="lazy" alt="John Andres" /> */}
       </Card>
