@@ -12,10 +12,10 @@ export default function App() {
    
   const [playState, setPlayState] = useState(false)
 
-  const playAnimation = (playState) => {
+//   const playAnimation = (playState) => {
 
-    setPlayState(true)
-  }
+//     setPlayState(true)
+//   }
 
 
    const FollowObj = () => {
@@ -23,7 +23,7 @@ export default function App() {
       const modelPos = [1, -1, 13];
 
    }
-   console.log(FollowObj)
+   // console.log(FollowObj)
 
    return (
       <>
@@ -54,7 +54,7 @@ export default function App() {
             <ambientLight intensity={0.1} />
             <directionalLight intensity={0.4} />
             <Suspense fallback={null}>
-               <Model position={[0.8, -0.9, 5]} toggleState={playAnimation}/> /* highlight-line */ /* highlight-line */
+               <Model position={[0.8, -0.9, 5]} toggleState={true}/> /* highlight-line */ /* highlight-line */
             </Suspense>
             <OrbitControls />
          </Canvas>
