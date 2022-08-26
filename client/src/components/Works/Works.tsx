@@ -9,7 +9,8 @@ import {
     Container,
     Grid,
     Typography,
-    Button
+    Button, 
+    Link
    } from '@mui/material'
 
 import Item1 from '../../assets/portfolio/portf1.png';
@@ -39,7 +40,12 @@ export default function Works () {
             alt: '',
             link: '',
             img: Item2,
-        }
+        },
+        {
+            alt: '',
+            link: '',
+            img: Item1,
+        },
     ]
 
     const AnimateGrid = animated(Grid)
@@ -48,25 +54,31 @@ export default function Works () {
         <>
             <Container maxWidth="xl"> 
                 <Grid container >
-                    <Grid item>
-                        <Typography sx={{ width:"100%", mt: 5,  }} variant="h3" component="h3" color="text.primary">
+                    <Grid item >
+                        <Typography sx={{ width:"100%", mt: 5, marginRight: '10px', }} variant="h3" component="h3" color="text.primary">
                             My Works
                         </Typography>
                     </Grid>
-                    <Grid item>
-                        <Typography sx={{ width:"100%", mt: 5,  }} variant="button" component="a" color="text.primary">
-                            View More
-                        </Typography>
+                    <Grid item >
+                        <Link href="#">
+                            <Typography sx={{ width:"100%", mt: 5, paddingTop:'20px', }} variant="h5" component="h5" color="text.primary">
+                                View More
+                            </Typography>
+                        </Link>
                     </Grid>
                 </Grid>
-            <AnimateGrid style={{...scrolling}} 
+            {/* <AnimateGrid style={{...scrolling}} 
                 sx={{
                 width: '100%',
                 display: 'flex',
                 gap: '50px',
                     
-            }}>
-                
+            }}> */}
+                <Grid sx={{
+                    width: '100%',
+                    display: 'flex',
+                    gap:'50px'
+                }}>
                 { 
                     cardItem.map ((cardItem, key, obj) => {
 
@@ -75,14 +87,15 @@ export default function Works () {
                         <Card key={key} sx={{ maxWidth: 'auto' }}>
                             <CardMedia
                                 component="img"
-                                height= "300"
+                                height= "350"
                                 image={cardItem.img}
                             />
                             
                         </Card>
                     )})
                 }
-            </AnimateGrid>
+                </Grid>
+            {/* </AnimateGrid> */}
             </Container>
         </>
     )

@@ -54,11 +54,12 @@ export default function Hero() {
         width: 500,
         right: '100%',
         height: 565,
-        backgroundColor: '#19857b',
-        '&:hover': {
-          backgroundColor: 'primary.main',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        background: 'transparent',
+        // backgroundColor: '#19857b',
+        // '&:hover': {
+        //   backgroundColor: 'primary.main',
+        //   opacity: [0.9, 0.8, 0.7],
+        // },
         paddingBottom: -10,
       }} >
         <img src={`${pfp}`} loading="lazy" alt="John Andres" />

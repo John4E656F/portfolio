@@ -26,11 +26,13 @@ export default function About() {
                 About me
                 </Typography>
             <Grid container sx={{
-                backgroundColor: 'red',
+                // backgroundColor: 'red',
                 mt: '20px',
             }}>
                 
-                <Grid item sx={{backgroundColor :'blue', }}>
+                <Grid item sx={{
+                    // backgroundColor :'blue', 
+                    }}>
                     <Typography variant="h4">
                     I'm a junior Web Developer looking for an internship or an employment, I'm very passionate about IT & I love discovering new Tech. I can quickly learn a new skill, and adapt in different situation needed.
                     </Typography>
