@@ -13,11 +13,11 @@ const LandingScreen = () => {
 	return (
 		<>
             <Navbar />
-                <Hero />
+                {/* <Hero />
 				<Banner />
 				<About />
 				<Works />
-			<Footer />
+			<Footer /> */}
 		</>
 	);
 };

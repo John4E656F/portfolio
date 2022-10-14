@@ -3,7 +3,6 @@
 }
 
 body {
-  background-image: url('./assets/img/bg.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   background-blend-mode: darken;
@@ -14,7 +13,7 @@ a {
 }
 
 .navlink {
-  color: rgb(160, 170, 19);
+  color: rgb(24, 24, 24);
   text-size-adjust: 10px;
   text-transform: capitalize;
   font-size: 20px;
@@ -23,7 +22,7 @@ a {
 
 .navlink:hover {
   font-size: 35px;
-  color: rgb(241, 255, 44);
+  color: rgb(65, 65, 65);
 }
 
 

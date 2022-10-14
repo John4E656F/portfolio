@@ -10,7 +10,9 @@ import {
   useTheme
 } from '@mui/material'
 
-import logo  from '../../assets/img/logo.png';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import CV from '../../assets/cvJohn.pdf'
 import { Link } from 'react-router-dom';
 
 
@@ -43,9 +45,12 @@ const theme = useTheme();
           <Container maxWidth="xl" 
             sx={{
               display: 'flex',
-              justifyContent: 'space-evenly'
+              justifyContent: 'space-evenly',
+              alignItems: 'center',
+              gap: "10px"
             }}>
-            <img src={logo} alt="Logo" width={60} height={60}/>
+            <GitHubIcon fontSize= "large"/>
+            <LinkedInIcon fontSize= "large"/>
             <Container maxWidth="sm" >
               <List>
                 <ListItem alignItems="flex-start"
@@ -56,12 +61,11 @@ const theme = useTheme();
                   }}>
                   <a className='navlink' href='/home' >Home</a>
                   <a className='navlink' href='/works' >Projects</a>
-                  <a className='navlink' href='/cv'>CV</a>
                   <a className='navlink' href='/contact' >Contact</a>
                 </ListItem>
               </List>
             </Container>
-            <Button >Let's Chat</Button>
+            <a href={CV} target="_blank" rel="noopener noreferrer" download><Button variant="contained">Download my CV</Button></a>
           </Container>
         </Toolbar>
       </AppBar>
