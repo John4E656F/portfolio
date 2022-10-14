@@ -13,37 +13,32 @@ import pfp from '../../assets/img/John.png';
 export default function Hero() {
 
   return (
-    <Container maxWidth="xl"
+    <Container
        sx={{
         display: 'flex',
         gap: '10px',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
     }}>
       <Container 
         sx={{
-          flexGrow: 1,
+          display:'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          testAlign: 'center',
       }}>
-        <Grid container spacing={2} >
-          <Typography sx={{ width:"100%", mt: 8 }} variant="h1" component="h2" color="text.primary">
+          <Typography sx={{ width:"100%", mt: 5, textAlign: 'center'}} variant="h3" component="h3" color="text.primary">
             Hi 🖖
           </Typography>
-          <Typography sx={{ mt: 2, mb: 3 }} variant="h1" component="h2" color="text.primary">
+          <Typography sx={{ textAlign: 'center'}} variant="h3" component="h3" color="text.primary">
             I'm John
           </Typography>
-        </Grid>
-        <Grid 
-          sx={{
-            display: 'flexbox',
-            justifyContent:'flex-end',
-        }}>
-          <Typography sx={{ mt: 6, mb: 3 }} variant="h3" color="text.primary">
-            Plan ◾ Design ◾ Develop ◾ Deploy
+          <Typography sx={{ mt: 1, mb: 3, textAlign:'center' }} variant="h3" color="text.primary">
+            Web Developer
           </Typography>
-
-        </Grid>
-        <Button href="/" variant="contained" 
-          sx={{
-            
-        }}>
+        <Button variant="contained" sx={{width: 200, margin:'auto'}}>
           Got a project?
         </Button>
         

@@ -40,7 +40,7 @@ const theme = useTheme();
 
   return (
 
-      <AppBar position="static" color='transparent'>
+ 
         <Toolbar >
           <Container maxWidth="xl" 
             sx={{
@@ -49,14 +49,14 @@ const theme = useTheme();
               alignItems: 'center',
               gap: "10px"
             }}>
-            <GitHubIcon fontSize= "large"/>
-            <LinkedInIcon fontSize= "large"/>
+            <a href='https://github.com/John4E656F'><GitHubIcon fontSize= "large" /></a>
+            <a href='https://www.linkedin.com/in/john4e656f/'><LinkedInIcon fontSize= "large"/></a>
             <Container maxWidth="sm" >
               <List>
                 <ListItem alignItems="flex-start"
                   sx={{
                     display: 'flex',
-                    justifyContent: 'space-between',
+                    justifyContent: 'space-evenly',
 
                   }}>
                   <a className='navlink' href='/home' >Home</a>
@@ -68,7 +68,7 @@ const theme = useTheme();
             <a href={CV} target="_blank" rel="noopener noreferrer" download><Button variant="contained">Download my CV</Button></a>
           </Container>
         </Toolbar>
-      </AppBar>
+ 
 
   );
 }

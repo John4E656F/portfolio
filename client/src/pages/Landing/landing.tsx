@@ -13,8 +13,8 @@ const LandingScreen = () => {
 	return (
 		<>
             <Navbar />
-                {/* <Hero />
-				<Banner />
+                <Hero />
+				{/* <Banner />
 				<About />
 				<Works />
 			<Footer /> */}
