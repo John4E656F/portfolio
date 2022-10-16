@@ -9,6 +9,7 @@ import {
  } from '@mui/material'
 
 import pfp from '../../assets/img/John.png';
+import Typewriter from 'typewriter-effect';
 
 export default function Hero() {
 
@@ -36,7 +37,13 @@ export default function Hero() {
             I'm John
           </Typography>
           <Typography sx={{ mt: 1, mb: 3, textAlign:'center' }} variant="h3" color="text.primary">
-            Web Developer
+            <Typewriter
+              options={{
+                strings: ['Web Developer', 'Frontend Developer',],
+                autoStart: true,
+                loop: true,
+              }}
+            />
           </Typography>
         <Button variant="contained" sx={{width: 200, margin:'auto'}}>
           Got a project?
