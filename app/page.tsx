@@ -15,9 +15,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className='flex content-center place-items-center justify-items-center justify-center bg-red-100 h-screen '>
-      Hello World
-      <SplashScreen />;
+    <div className='w-screen h-screen flex items-center justify-center  '>
+      <SplashScreen />
     </div>
   );
 }
