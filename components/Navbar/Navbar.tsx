@@ -48,7 +48,6 @@ export const Navbar = () => {
     >
       <h1 className='font-agbalumo text-2xl'>John Andres</h1>
       <div className='  md:block md:w-auto bg-red-400' id='navbar-default'>
-        <MenuToggle toggle={() => toggleOpen()} />
         <motion.div className='background' variants={sidebar} />
         <motion.ul variants={variants}>
           {itemIds.map((i) => (
