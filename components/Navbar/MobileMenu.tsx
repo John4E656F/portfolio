@@ -23,13 +23,22 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu, menuRe
           </Link>
         </li>
         <li>
+          <Link href='/work' className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-200' onClick={toggleMenu}>
+            Work
+          </Link>
+        </li>
+        <li>
           <Link href='/contact' className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-200' onClick={toggleMenu}>
             Contact
           </Link>
         </li>
         <li>
-          <Link href='/login' className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-200' onClick={toggleMenu}>
-            Contact
+          <Link
+            href='/annonce'
+            className='block py-2 pl-3 pr-4 bg-brand-primary text-white text-center rounded hover:bg-blue-200 mt-5'
+            onClick={toggleMenu}
+          >
+            Download Resume
           </Link>
         </li>
       </ul>

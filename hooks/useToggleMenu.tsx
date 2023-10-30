@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 
 type ReturnType = {
   menuRef: React.RefObject<HTMLDivElement>;
@@ -10,22 +10,25 @@ export function useToggleMenu(): ReturnType {
   const menuRef = useRef<HTMLDivElement | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen((prevState) => !prevState);
+  }, []);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
-      toggleMenu();
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event: MouseEvent) => {
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        toggleMenu();
+      }
+    },
+    [isMenuOpen, toggleMenu],
+  );
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMenuOpen, toggleMenu]);
+  }, [handleClickOutside]);
 
   return { menuRef, isMenuOpen, toggleMenu };
 }

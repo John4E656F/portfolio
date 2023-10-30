@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, sync, useCycle } from 'framer-motion';
-import { MenuToggle } from './MenuToggle';
-import { MenuItem } from './MenuItems';
+import { MenuToggle, MenuItem, MobileMenu } from '@/components';
+import { useToggleMenu } from '@/hooks';
 
 const itemIds = [0, 1, 2, 3, 4];
 
@@ -37,6 +37,9 @@ const variants = {
 export const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
+  const { menuRef: mobileMenuRef, isMenuOpen: isMobileMenuOpen, toggleMenu: toggleMobileMenu } = useToggleMenu();
+
+  console.log(isMobileMenuOpen);
 
   return (
     <motion.nav
@@ -50,12 +53,7 @@ export const Navbar = () => {
       <div className='flex justify-center md:w-auto bg-red-400' id='navbar-default'>
         <MenuToggle toggle={() => toggleOpen()} />
       </div>
-      <motion.div className='background' variants={sidebar} />
-      <motion.ul variants={variants}>
-        {itemIds.map((i) => (
-          <MenuItem key={i} />
-        ))}
-      </motion.ul>
+      <MobileMenu isMenuOpen={isOpen} toggleMenu={toggleMobileMenu} menuRef={mobileMenuRef} />
     </motion.nav>
   );
 };
