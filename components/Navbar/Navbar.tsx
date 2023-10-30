@@ -50,12 +50,12 @@ export const Navbar = () => {
       <div className='flex justify-center md:w-auto bg-red-400' id='navbar-default'>
         <MenuToggle toggle={() => toggleOpen()} />
       </div>
-      {/* <motion.div className='background' variants={sidebar} />
+      <motion.div className='background' variants={sidebar} />
       <motion.ul variants={variants}>
         {itemIds.map((i) => (
           <MenuItem key={i} />
         ))}
-      </motion.ul> */}
+      </motion.ul>
     </motion.nav>
   );
 };
