@@ -47,14 +47,15 @@ export const Navbar = () => {
       className=' w-full bg-orange-300 flex justify-between items-center'
     >
       <h1 className='font-agbalumo text-2xl'>John Andres</h1>
-      <div className='  md:block md:w-auto bg-red-400' id='navbar-default'>
-        <motion.div className='background' variants={sidebar} />
-        <motion.ul variants={variants}>
-          {itemIds.map((i) => (
-            <MenuItem key={i} />
-          ))}
-        </motion.ul>
+      <div className='flex justify-center md:w-auto bg-red-400' id='navbar-default'>
+        <MenuToggle toggle={() => toggleOpen()} />
       </div>
+      {/* <motion.div className='background' variants={sidebar} />
+      <motion.ul variants={variants}>
+        {itemIds.map((i) => (
+          <MenuItem key={i} />
+        ))}
+      </motion.ul> */}
     </motion.nav>
   );
 };
