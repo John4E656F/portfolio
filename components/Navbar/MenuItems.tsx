@@ -11,7 +11,12 @@ export const MenuItem: FC<{ href: string; onClick: () => void; text: string; del
 
   return (
     <li>
-      <Link href={href} className='block text-center py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100' onClick={onClick} aria-current='page'>
+      <Link
+        href={href}
+        className='block text-center py-2 pl-3 pr-4 hover:font-bold text-black rounded hover:bg-gray-100'
+        onClick={onClick}
+        aria-current='page'
+      >
         <AnimatePresence>
           {isMounted && (
             <motion.span

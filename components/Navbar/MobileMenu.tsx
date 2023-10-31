@@ -69,7 +69,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
       <motion.li variants={heartbeat} initial='initial' animate={isMounted ? ['grow', 'animate'] : 'initial'} whileHover='rest'>
         <Link
           href='/assets/JohnAndresCV.pdf'
-          className='block py-2 pl-3 pr-4 text-center rounded bg-red-400 hover:bg-red-500 mt-5'
+          className='block py-2 pl-3 pr-4 text-center rounded hover:font-bold bg-red-400 hover:bg-red-500 mt-5'
           onClick={toggleMenu}
         >
           Download Resume
