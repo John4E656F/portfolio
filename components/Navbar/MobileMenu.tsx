@@ -13,49 +13,12 @@ const variants = {
   closed: { opacity: 0, scale: 0 },
 };
 
-const heartbeat = {
-  initial: {
-    scale: 0,
-    opacity: 0,
-  },
-  grow: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      delay: 0.8,
-    },
-  },
-  animate: {
-    scale: [0.9, 1.09, 1, 1.09, 0.9, 0.9, 0.9],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-    },
-  },
-  rest: {
-    scale: 1,
-  },
-  hover: {
-    scale: 1,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
 export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   if (!isMenuOpen) return null;
 
   return (
     <motion.ul
-      className='absolute top-10 right-0 p-5 md:hidden justify-self-center w-1/2 border border-gray-300 rounded-md bg-brand-lightbg '
+      className='absolute bg-white top-10 right-0 p-5 md:hidden min:w-3/5 border border-gray-300 rounded-md overflow-hidden'
       id='navbar-menu'
       initial='closed'
       animate={isMenuOpen ? 'open' : 'closed'}
@@ -66,10 +29,15 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
       <MenuItem href='/' onClick={toggleMenu} text='Home' delay={0.2} />
       <MenuItem href='/work' onClick={toggleMenu} text='Work' delay={0.4} />
       <MenuItem href='/contact' onClick={toggleMenu} text='Contact' delay={0.6} />
-      <motion.li variants={heartbeat} initial='initial' animate={isMounted ? ['grow', 'animate'] : 'initial'} whileHover='rest'>
+      <motion.li
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}
+      >
         <Link
           href='/assets/JohnAndresCV.pdf'
-          className='block py-2 px-3 text-center rounded hover:font-semibold bg-red-400 hover:bg-red-500 mt-5'
+          className='block whitespace-nowrap py-2 px-3 text-center rounded hover:font-semibold bg-red-400 hover:bg-red-500 mt-5'
           onClick={toggleMenu}
         >
           Download Resume

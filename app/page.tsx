@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Navbar, SplashScreen } from '../components/';
+import { SplashScreen, Navbar, Hero } from '../components/';
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -47,8 +47,9 @@ export default function Home() {
             </motion.h1>
           </motion.div>
         ) : (
-          <div className='container pt-3'>
+          <div className='container flex flex-col gap-2 pt-3'>
             <Navbar />
+            <Hero />
           </div>
         )}
       </AnimatePresence>

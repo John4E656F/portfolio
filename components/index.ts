@@ -5,3 +5,4 @@ export { MenuToggle } from './Navbar/MenuToggle';
 export { MenuItem } from './Navbar/MenuItems';
 export { Link } from './Link/Link';
 export { Button } from './Button/Button';
+export { Hero } from './Hero/Hero';
