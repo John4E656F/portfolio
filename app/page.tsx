@@ -16,7 +16,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`${isHidden === false ? 'overflow-y-scroll no-scrollbar' : ''}`}>
+    <div className={`flex justify-center ${isHidden === false ? 'overflow-y-scroll no-scrollbar' : ''}`}>
       <AnimatePresence>
         {!isHidden ? (
           <motion.div
@@ -47,7 +47,7 @@ export default function Home() {
             </motion.h1>
           </motion.div>
         ) : (
-          <div className='container'>
+          <div className='container pt-3'>
             <Navbar />
           </div>
         )}

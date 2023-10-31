@@ -1,31 +1,30 @@
-import * as React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, FC } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from '..';
 
-const variants = {
-  open: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  closed: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
+export const MenuItem: FC<{ href: string; onClick: () => void; text: string; delay: number }> = ({ href, onClick, text, delay }) => {
+  const [isMounted, setIsMounted] = useState(false);
 
-const colors = ['#FF008C', '#D309E1', '#9C1AFF', '#7700FF', '#4400FF'];
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-export const MenuItem = () => {
-  const style = { border: `2px solid` };
   return (
-    <motion.li variants={variants} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-      <div className='icon-placeholder' style={style} />
-      <div className='text-placeholder' style={style} />
-    </motion.li>
+    <li>
+      <Link href={href} className='block text-center py-2 pl-3 pr-4 text-black rounded hover:bg-gray-100' onClick={onClick} aria-current='page'>
+        <AnimatePresence>
+          {isMounted && (
+            <motion.span
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5, ease: 'easeInOut', delay: delay }}
+            >
+              {text}
+            </motion.span>
+          )}
+        </AnimatePresence>
+      </Link>
+    </li>
   );
 };

@@ -16,7 +16,7 @@ const Path: React.FC<PathProps> = (props) => (
 );
 
 export const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => (
-  <button onClick={toggle} style={{ background: 'transparent', border: 'none' }}>
+  <button className='md:hidden h-5' onClick={toggle}>
     <motion.svg width='23' height='23' viewBox='0 0 23 23'>
       <Path
         variants={{

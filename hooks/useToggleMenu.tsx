@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
+import { useCycle } from 'framer-motion';
 
 type ReturnType = {
   menuRef: React.RefObject<HTMLDivElement>;
@@ -8,11 +9,7 @@ type ReturnType = {
 
 export function useToggleMenu(): ReturnType {
   const menuRef = useRef<HTMLDivElement | null>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen((prevState) => !prevState);
-  }, []);
+  const [isMenuOpen, toggleMenu] = useCycle(false, true);
 
   const handleClickOutside = useCallback(
     (event: MouseEvent) => {
