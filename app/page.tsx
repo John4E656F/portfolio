@@ -50,6 +50,7 @@ export default function Home() {
           <div className='container flex flex-col gap-2 '>
             <Navbar />
             <Hero />
+            <Hero />
           </div>
         )}
       </AnimatePresence>
