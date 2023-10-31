@@ -2,8 +2,8 @@ import React from 'react';
 
 export const Hero = () => {
   return (
-    <div>
+    <section className='w-full h-screen bg-red-200'>
       <div>Hello World!</div>
-    </div>
+    </section>
   );
 };

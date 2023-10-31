@@ -43,7 +43,7 @@ export const Navbar = () => {
       animate={isOpen ? 'open' : 'closed'}
       custom={100}
       ref={containerRef}
-      className='relative w-full h-10 flex justify-between items-center'
+      className='sticky top-0 w-full py-3 pt-5  flex justify-between items-center bg-white'
     >
       <motion.h1
         initial={{ opacity: 0, y: -50 }}

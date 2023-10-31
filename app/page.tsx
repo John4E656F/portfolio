@@ -47,7 +47,7 @@ export default function Home() {
             </motion.h1>
           </motion.div>
         ) : (
-          <div className='container flex flex-col gap-2 pt-3'>
+          <div className='container flex flex-col gap-2 '>
             <Navbar />
             <Hero />
           </div>
