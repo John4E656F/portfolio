@@ -71,7 +71,7 @@ export default function Home() {
               <ParallaxText baseVelocity={-2}>Mui-Sass-Tailwinds-</ParallaxText>
               <ParallaxText baseVelocity={2}>NodeJs-Vite-ExpressJs-Fastify-</ParallaxText>
             </figure>
-            <Works />
+            <Works parentRef={ref} />
           </div>
         )}
       </AnimatePresence>

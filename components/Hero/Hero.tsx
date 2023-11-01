@@ -7,9 +7,6 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ parentRef }) => {
   const { scrollYProgress } = useScroll({ target: parentRef });
-  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    console.log('Page scroll: ', latest);
-  });
 
   const xLeftInput = useTransform(scrollYProgress, [0, 1], [0, -300]);
   const xRightInput = useTransform(scrollYProgress, [0, 1], [0, 300]);
