@@ -53,8 +53,8 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
    * dynamically generated number of children.
    */
   return (
-    <div className='overflow-hidden h-auto m-0 tracking-tighter flex flex-nowrap whitespace-nowrap'>
-      <motion.p className='text-5xl font-semibold flex flex-nowrap whitespace-nowrap' style={{ x }}>
+    <div className='overflow-hidden m-0 tracking-tighter flex flex-nowrap whitespace-nowrap'>
+      <motion.p className='text-5xl font-semibold flex flex-nowrap whitespace-nowrap pb-3' style={{ x }}>
         <span className='block'>{children}</span>
         <span className='block'>{children}</span>
         <span className='block'>{children}</span>

@@ -65,7 +65,7 @@ export default function Home() {
           <div className='w-full flex flex-col items-center'>
             <Navbar />
             <Hero parentRef={ref} />
-            <figure className='w-full'>
+            <figure className='w-full py-5'>
               <ParallaxText baseVelocity={-5}>Javascript-Typescript-</ParallaxText>
               <ParallaxText baseVelocity={5}>React-NextJs-React Native-Expo-</ParallaxText>
               <ParallaxText baseVelocity={-5}>Mui-Sass-Tailwinds-</ParallaxText>

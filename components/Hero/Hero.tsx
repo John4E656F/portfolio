@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ parentRef }) => {
 
   return (
     <section className='overflow-hidden w-full flex justify-center'>
-      <div className='container flex flex-col gap-20 py-10 md:py-20'>
+      <div className='container flex flex-col gap-20 pb-2 pt-10 md:pt-20'>
         <motion.h1 className='flex flex-col px-5 sm:px-10 md:px-20 lg:px-32 gap-10 sm:gap-15 md:gap-20 lg:gap-24 text-4xl sm:text-5xl md:text-6xl lg:text-7xl whitespace-nowrap'>
           <motion.span
             initial={{ opacity: 0, x: 300 }}
