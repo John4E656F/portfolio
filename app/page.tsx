@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SplashScreen, Navbar, Hero, Works } from '../components/';
+import { SplashScreen, Navbar, Hero, Works, ParallaxText } from '../components/';
 
 export default function Home() {
   const ref = useRef(null);
@@ -51,6 +51,10 @@ export default function Home() {
           <div className='w-full flex flex-col items-center'>
             <Navbar />
             <Hero parentRef={ref} />
+            <figure className='w-full'>
+              <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
+              <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+            </figure>
             <Works />
           </div>
         )}

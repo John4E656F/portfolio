@@ -7,3 +7,4 @@ export { Link } from './Link/Link';
 export { Button } from './Button/Button';
 export { Hero } from './Hero/Hero';
 export { Works } from './Works/Works';
+export { ParallaxText } from './ParallaxText/ParallaxText';
