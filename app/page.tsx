@@ -66,10 +66,10 @@ export default function Home() {
             <Navbar />
             <Hero parentRef={ref} />
             <figure className='w-full py-5'>
-              <ParallaxText baseVelocity={-5}>Javascript-Typescript-</ParallaxText>
-              <ParallaxText baseVelocity={5}>React-NextJs-React Native-Expo-</ParallaxText>
-              <ParallaxText baseVelocity={-5}>Mui-Sass-Tailwinds-</ParallaxText>
-              <ParallaxText baseVelocity={5}>NodeJs-Vite-ExpressJs-Fastify-</ParallaxText>
+              <ParallaxText baseVelocity={-2}>Javascript-Typescript-</ParallaxText>
+              <ParallaxText baseVelocity={2}>React-NextJs-React Native-Expo-</ParallaxText>
+              <ParallaxText baseVelocity={-2}>Mui-Sass-Tailwinds-</ParallaxText>
+              <ParallaxText baseVelocity={2}>NodeJs-Vite-ExpressJs-Fastify-</ParallaxText>
             </figure>
             <Works />
           </div>

@@ -24,7 +24,7 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
    * have to replace for wrapping that works for you or dynamically
    * calculate
    */
-  const x = useTransform(baseX, (v) => `${wrap(-20, -40, v)}%`);
+  const x = useTransform(baseX, (v) => `${wrap(0, -30, v)}%`);
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((t, delta) => {
@@ -55,6 +55,11 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
   return (
     <div className='overflow-hidden m-0 tracking-tighter flex flex-nowrap whitespace-nowrap'>
       <motion.p className='text-5xl font-semibold flex flex-nowrap whitespace-nowrap pb-3' style={{ x }}>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
         <span className='block'>{children}</span>
         <span className='block'>{children}</span>
         <span className='block'>{children}</span>
