@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`flex justify-center ${isHidden === false ? 'overflow-y-scroll no-scrollbar' : ''}`}>
+    <div ref={ref} className={`flex justify-center ${isHidden === false ? 'overflow-y-scroll no-scrollbar' : ''}`}>
       <AnimatePresence>
         {!isHidden ? (
           <motion.div
@@ -48,7 +48,7 @@ export default function Home() {
             </motion.h1>
           </motion.div>
         ) : (
-          <div ref={ref} className='container flex flex-col gap-2 '>
+          <div className='w-full flex flex-col items-center'>
             <Navbar />
             <Hero parentRef={ref} />
             <Works />
