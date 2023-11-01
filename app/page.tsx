@@ -2,6 +2,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { SplashScreen, Navbar, Hero, Works, ParallaxText } from '../components/';
+import {
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiExpo,
+  SiMui,
+  SiSass,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiVite,
+  SiExpress,
+  SiFastify,
+} from 'react-icons/si';
 
 export default function Home() {
   const ref = useRef(null);
@@ -52,8 +66,10 @@ export default function Home() {
             <Navbar />
             <Hero parentRef={ref} />
             <figure className='w-full'>
-              <ParallaxText baseVelocity={-5}>Framer Motion</ParallaxText>
-              <ParallaxText baseVelocity={5}>Scroll velocity</ParallaxText>
+              <ParallaxText baseVelocity={-5}>Javascript-Typescript-</ParallaxText>
+              <ParallaxText baseVelocity={5}>React-NextJs-React Native-Expo-</ParallaxText>
+              <ParallaxText baseVelocity={-5}>Mui-Sass-Tailwinds-</ParallaxText>
+              <ParallaxText baseVelocity={5}>NodeJs-Vite-ExpressJs-Fastify-</ParallaxText>
             </figure>
             <Works />
           </div>

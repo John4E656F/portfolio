@@ -1,9 +1,9 @@
-import { useRef } from 'react';
+import { useRef, ReactNode } from 'react';
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame } from 'framer-motion';
 import { wrap } from '@/lib';
 
 interface ParallaxProps {
-  children: string;
+  children: ReactNode;
   baseVelocity: number;
 }
 
@@ -53,13 +53,13 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
    * dynamically generated number of children.
    */
   return (
-    <div className='overflow-hidden m-0 tracking-tighter flex flex-nowrap whitespace-nowrap  bg-red-100'>
-      <motion.p className='text-5xl font-semibold gap-10 flex flex-nowrap whitespace-nowrap bg-blue-200'>
-        <span className='block mr-8'>{children}</span>
-        <span className='block mr-8'>{children}</span>
-        <span className='block mr-8'>{children}</span>
-        <span className='block mr-8'>{children}</span>
-        <span className='block mr-8'>{children}</span>
+    <div className='overflow-hidden h-auto m-0 tracking-tighter flex flex-nowrap whitespace-nowrap'>
+      <motion.p className='text-5xl font-semibold flex flex-nowrap whitespace-nowrap' style={{ x }}>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
+        <span className='block'>{children}</span>
       </motion.p>
     </div>
   );
