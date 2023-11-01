@@ -1,9 +1,10 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SplashScreen, Navbar, Hero } from '../components/';
+import { SplashScreen, Navbar, Hero, Works } from '../components/';
 
 export default function Home() {
+  const ref = useRef(null);
   const [animationComplete, setAnimationComplete] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
@@ -47,10 +48,10 @@ export default function Home() {
             </motion.h1>
           </motion.div>
         ) : (
-          <div className='container flex flex-col gap-2 '>
+          <div ref={ref} className='container flex flex-col gap-2 '>
             <Navbar />
-            <Hero />
-            <Hero />
+            <Hero parentRef={ref} />
+            <Works />
           </div>
         )}
       </AnimatePresence>
