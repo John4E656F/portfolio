@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Yes Job",
+    "subTitle": "Horeca Job Board",
+    "image": "/yesjob.JPG",
+    "website": "https://yesjob.be/",
+    "github": "https://github.com/John4E656F/Yes-Job",
+    "right": true
+  },
+  {
+    "title": "Just Do",
+    "subTitle": "Dead Simple To-Do List",
+    "image": "/JustDo.JPG",
+    "website": "https://justdo-todo.netlify.app/",
+    "github": "https://github.com/John4E656F/JustDo-React",
+    "right": false
+  }
+]

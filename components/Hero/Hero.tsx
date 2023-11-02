@@ -1,11 +1,7 @@
-import { RefObject } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValueEvent } from 'framer-motion';
+import type { RefProps } from '@/types';
 
-interface HeroProps {
-  parentRef: RefObject<HTMLElement>;
-}
-
-export const Hero: React.FC<HeroProps> = ({ parentRef }) => {
+export const Hero: React.FC<RefProps> = ({ parentRef }) => {
   const { scrollYProgress } = useScroll({ target: parentRef });
 
   const xLeftInput = useTransform(scrollYProgress, [0, 1], [0, -300]);

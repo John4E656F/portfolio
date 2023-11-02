@@ -45,7 +45,7 @@ export const Navbar = () => {
       ref={containerRef}
       className='sticky z-10 top-0 w-full py-3 pt-5 flex justify-center bg-white'
     >
-      <div className='container  flex justify-between items-center'>
+      <div className='container flex justify-between items-center'>
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}

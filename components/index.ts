@@ -6,5 +6,6 @@ export { MenuItem } from './Navbar/MenuItems';
 export { Link } from './Link/Link';
 export { Button } from './Button/Button';
 export { Hero } from './Hero/Hero';
-export { Works } from './Works/Works';
 export { ParallaxText } from './ParallaxText/ParallaxText';
+export { Works } from './Works/Works';
+export { Work } from './Works/Work';
