@@ -58,7 +58,7 @@ export const Hero: React.FC<RefProps> = ({ parentRef }) => {
             style={{ x: xLeft }}
             transition={{ duration: 0.5, ease: 'easeInOut', delay: 1 }}
           >
-            My name is John Andres
+            My name is John
           </motion.span>
           <motion.span
             initial={{ opacity: 0, x: -300 }}
