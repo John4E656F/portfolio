@@ -6,12 +6,13 @@ import workData from '@/data/works.json';
 
 export const Works: React.FC<RefProps> = ({ parentRef }) => {
   const { scrollYProgress } = useScroll({ target: parentRef });
-  const bgColor = useTransform(scrollYProgress, [0, 0.9], ['#ffffff', '#000000']);
+  const bgColor = useTransform(scrollYProgress, [0, 0.5], ['#ffffff', '#000000']);
   console.log(workData);
 
   return (
     <motion.section
-      className='w-full py-10 my-10 text-white flex justify-center'
+      id='works'
+      className='overflow-hidden w-full py-20 my-10 text-white flex justify-center'
       style={{
         backgroundColor: bgColor,
         mixBlendMode: 'overlay',

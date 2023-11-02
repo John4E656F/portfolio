@@ -44,7 +44,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
   return (
     <article className='flex flex-col justify-cente gap-5 py-10'>
       <div className='flex flex-col text-center gap-1'>
-        <motion.h5
+        <motion.h4
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           style={{ x: right ? xRight : xLeft }}
@@ -52,7 +52,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold'
         >
           {title}
-        </motion.h5>
+        </motion.h4>
         <motion.p
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}

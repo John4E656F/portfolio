@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { SplashScreen, Navbar, Hero, Works, ParallaxText } from '../components/';
+import { SplashScreen, Navbar, Hero, ParallaxText, Works, Contact } from '../components/';
 import {
   SiJavascript,
   SiTypescript,
@@ -72,6 +72,7 @@ export default function Home() {
               <ParallaxText baseVelocity={2}>NodeJs-Vite-ExpressJs-Fastify-</ParallaxText>
             </figure>
             <Works parentRef={ref} />
+            <Contact />
           </div>
         )}
       </AnimatePresence>

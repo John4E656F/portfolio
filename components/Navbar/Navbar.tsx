@@ -56,30 +56,26 @@ export const Navbar = () => {
         </motion.h1>
         <ul className='hidden md:flex gap-2 items-center'>
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}>
-            <Link href='/' className=' hover:font-semibold' aria-current='page'>
+            <Link href='#home' className=' hover:font-semibold' aria-current='page'>
               Home
             </Link>
           </motion.li>
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}>
-            <Link href='/work' className='block text-center py-2 px-3 hover:font-semibold text-black rounded hover:bg-gray-100' aria-current='page'>
+            <Link href='#works' className='block text-center py-2 px-3 hover:font-semibold text-black rounded hover:bg-gray-100' aria-current='page'>
               Work
             </Link>
           </motion.li>
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.6 }}>
             <Link
-              href='/contact'
+              href='#contact'
               className='block text-center py-2 px-3 hover:font-semibold text-black rounded hover:bg-gray-100'
               aria-current='page'
             >
               Contact
             </Link>
           </motion.li>
-
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}>
-            <Link
-              href='/assets/JohnAndresCV.pdf'
-              className='ml-3 py-2 pl-3 pr-2 text-center rounded hover:font-semibold bg-red-400 hover:bg-red-500 mt-5'
-            >
+            <Link href='/JohnAndresCV.pdf' className='ml-3 py-2 pl-3 pr-2 text-center rounded hover:font-semibold bg-red-400 hover:bg-red-500 mt-5'>
               Download Resume
             </Link>
           </motion.li>
