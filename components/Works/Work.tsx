@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRef, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import type { RefProps } from '@/types';
 import { AiFillEye, AiFillGithub } from 'react-icons/ai';
@@ -16,6 +16,7 @@ interface WorkProps extends RefProps {
 export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, website, github, right }) => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const [linksVisible, setLinksVisible] = useState(false);
 
   const { scrollYProgress } = useScroll({ target: parentRef });
 
@@ -30,10 +31,15 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
     hidden: { opacity: 0, scale: 0.65, y: 50 },
   };
 
-  const hoverVariant = {
-    visible: { opacity: 0, scale: 1, y: 0 },
-    hidden: { opacity: 0, scale: 0.65, y: 50 },
-  };
+  useEffect(() => {
+    if (isInView) {
+      setTimeout(() => {
+        setLinksVisible(true);
+      }, 2000); // delay in ms (match this with the image transition duration)
+    } else {
+      setLinksVisible(false);
+    }
+  }, [isInView]);
 
   return (
     <article className='flex flex-col justify-cente gap-5 py-10'>
@@ -66,9 +72,8 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           className='rounded w-full max-w-2xl'
         />
         <motion.div
-          animate={isInView ? 'visible' : 'hidden'}
-          variants={hoverVariant}
-          whileHover={{ opacity: 0.5 }}
+          initial={{ opacity: 0 }}
+          whileHover={linksVisible ? { opacity: 0.5 } : { opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeInOut' }}
           className='absolute flex justify-center items-center gap-5 rounded bg-gray-500 w-full max-w-2xl h-full cursor-pointer'
         >
