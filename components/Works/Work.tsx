@@ -80,6 +80,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           {website && (
             <motion.a
               href={website}
+              target='_blank'
               initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
               animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
               transition={{
@@ -103,7 +104,8 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           )}
           {github && (
             <motion.a
-              href={website}
+              href={github}
+              target='_blank'
               initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
               animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
               transition={{
@@ -130,6 +132,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           {website && (
             <motion.a
               href={website}
+              target='_blank'
               initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
               animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
               transition={{
@@ -154,6 +157,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           {github && (
             <motion.a
               href={github}
+              target='_blank'
               initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
               animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
               transition={{
