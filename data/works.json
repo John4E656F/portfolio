@@ -14,5 +14,13 @@
     "website": "https://justdo-todo.netlify.app/",
     "github": "https://github.com/John4E656F/JustDo-React",
     "right": false
+  },
+  {
+    "title": "myLeague Card",
+    "subTitle": "League of Legend Gamer Card Builder",
+    "image": "/myLeagueCard.JPG",
+    "website": "https://myleaguecard.com/",
+    "github": "https://github.com/John4E656F/myleaguecard/",
+    "right": true
   }
 ]
