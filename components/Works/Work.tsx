@@ -73,7 +73,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
         />
         <motion.div
           initial={{ opacity: 0 }}
-          whileHover={linksVisible ? { opacity: 0.5 } : { opacity: 0 }}
+          whileHover={linksVisible ? { opacity: 0.8 } : { opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeInOut' }}
           className='hidden md:absolute md:flex justify-center items-center gap-5 rounded bg-gray-500 w-full max-w-2xl h-full cursor-pointer'
         >

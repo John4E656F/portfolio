@@ -62,7 +62,7 @@ export default function Home() {
             </motion.h1>
           </motion.div>
         ) : (
-          <div className='w-full flex flex-col items-center'>
+          <div className='w-full flex flex-col items-center select-none'>
             <Navbar />
             <Hero parentRef={ref} />
             <figure className='w-full py-5'>
