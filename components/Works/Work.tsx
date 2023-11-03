@@ -63,7 +63,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           {subTitle}
         </motion.p>
       </div>
-      <div ref={ref} className='relative flex justify-center'>
+      <div ref={ref} className='relative flex flex-col items-center justify-center'>
         <motion.img
           src={image}
           animate={isInView ? 'visible' : 'hidden'}
@@ -75,33 +75,107 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           initial={{ opacity: 0 }}
           whileHover={linksVisible ? { opacity: 0.5 } : { opacity: 0 }}
           transition={{ duration: 0.25, ease: 'easeInOut' }}
-          className='absolute flex justify-center items-center gap-5 rounded bg-gray-500 w-full max-w-2xl h-full cursor-pointer'
+          className='hidden md:absolute md:flex justify-center items-center gap-5 rounded bg-gray-500 w-full max-w-2xl h-full cursor-pointer'
         >
           {website && (
-            <Link href={website}>
+            <motion.a
+              href={website}
+              initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+              animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 400,
+                damping: 17,
+                duration: 3,
+                delay: isInView ? 1 : 0,
+                ease: [0.17, 0.55, 0.55, 1],
+              }}
+            >
               <motion.div
-                whileInView={{ scale: [0, 1] }}
-                whileHover={{ scale: [1, 0.9] }}
-                transition={{ duration: 0.25 }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 className='bg-gray-600 p-3 rounded-full'
               >
                 <AiFillEye size={50} />
               </motion.div>
-            </Link>
+            </motion.a>
           )}
           {github && (
-            <Link href={github}>
+            <motion.a
+              href={website}
+              initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+              animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 400,
+                damping: 17,
+                duration: 3,
+                delay: isInView ? 1 : 0,
+                ease: [0.17, 0.55, 0.55, 1],
+              }}
+            >
               <motion.div
-                whileInView={{ scale: [0, 1] }}
-                whileHover={{ scale: [1, 0.9] }}
-                transition={{ duration: 0.25 }}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 className='bg-gray-600 p-3 rounded-full'
               >
                 <AiFillGithub size={50} />
               </motion.div>
-            </Link>
+            </motion.a>
           )}
         </motion.div>
+        <div className='md:hidden flex justify-center items-center gap-5 pt-5 cursor-pointer'>
+          {website && (
+            <motion.a
+              href={website}
+              initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+              animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 400,
+                damping: 17,
+                duration: 3,
+                delay: isInView ? 2 : 0,
+                ease: [0.17, 0.55, 0.55, 1],
+              }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className='bg-gray-600 p-3 rounded-full'
+              >
+                <AiFillEye size={50} />
+              </motion.div>
+            </motion.a>
+          )}
+          {github && (
+            <motion.a
+              href={github}
+              initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+              animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 400,
+                damping: 17,
+                duration: 3,
+                delay: isInView ? 2 : 0,
+                ease: [0.17, 0.55, 0.55, 1],
+              }}
+            >
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className='bg-gray-600 p-3 rounded-full'
+              >
+                <AiFillGithub size={50} />
+              </motion.div>
+            </motion.a>
+          )}
+        </div>
       </div>
     </article>
   );
