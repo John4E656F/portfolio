@@ -4,16 +4,16 @@ import type { RefProps } from '@/types';
 export const Hero: React.FC<RefProps> = ({ parentRef }) => {
   const { scrollYProgress } = useScroll({ target: parentRef });
 
-  const xLeftInput = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const xRightInput = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const xLeftInput = useTransform(scrollYProgress, [0, 1], [0, -500]);
+  const xRightInput = useTransform(scrollYProgress, [0, 1], [0, 500]);
 
-  const xLeft = useSpring(xLeftInput, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const xRight = useSpring(xRightInput, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const xLeft = useSpring(xLeftInput, { stiffness: 300, damping: 30, restDelta: 0.001 });
+  const xRight = useSpring(xRightInput, { stiffness: 300, damping: 30, restDelta: 0.001 });
 
   return (
     <section id='home' className='overflow-hidden w-full flex justify-center'>
       <div className='container flex flex-col gap-20 pb-2 pt-10 md:pt-20'>
-        <motion.h1 className='flex flex-col px-5 sm:px-10 md:px-20 lg:px-32 gap-10 sm:gap-15 md:gap-20 lg:gap-24 text-4xl sm:text-5xl md:text-6xl lg:text-7xl whitespace-nowrap'>
+        <motion.h1 className='flex flex-col px-5 sm:px-10 md:px-20 lg:px-32 gap-5 sm:gap-10 md:gap-15 text-4xl sm:text-5xl md:text-6xl lg:text-7xl whitespace-nowrap'>
           <motion.span
             initial={{ opacity: 0, x: 300 }}
             animate={{ opacity: 1, x: 0 }}
@@ -51,7 +51,7 @@ export const Hero: React.FC<RefProps> = ({ parentRef }) => {
             Based in Belgium
           </motion.span>
         </motion.h1>
-        <motion.h2 className='flex flex-col px-5 sm:px-10 md:px-20 lg:px-32 gap-10 sm:gap-15 md:gap-20 lg:gap-24 text-4xl sm:text-5xl md:text-6xl lg:text-7xl whitespace-nowrap'>
+        <motion.h2 className='flex flex-col px-5 sm:px-10 md:px-20 lg:px-32 gap-5 sm:gap-10 md:gap-15 text-4xl sm:text-5xl md:text-6xl lg:text-7xl whitespace-nowrap'>
           <motion.span
             initial={{ opacity: 0, x: 300 }}
             animate={{ opacity: 1, x: 0 }}

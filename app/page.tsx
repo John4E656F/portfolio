@@ -49,7 +49,7 @@ export default function Home() {
           >
             <SplashScreen />
             <motion.h1
-              className='font-agbalumo text-2xl text-white'
+              className='font-agbalumo text-2xl md:text-4xl lg:text-6xl xl:text-8xl text-center text-white'
               initial={{ opacity: 0, y: '100%' }}
               animate={{ opacity: 1, y: '0%' }}
               transition={{
