@@ -14,8 +14,6 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
     async function fetchData() {
       try {
         const response = await fetchWorkList({ preview: false });
-        console.log(response);
-
         setWorkData(response);
       } catch (error) {
         console.error('Error fetching data from Contentful:', error);
@@ -24,8 +22,6 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
 
     fetchData();
   }, []);
-
-  console.log(workData);
 
   return (
     <motion.section
