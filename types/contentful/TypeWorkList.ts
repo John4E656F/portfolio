@@ -1,23 +1,14 @@
-import * as contentful from 'contentful';
-
-export type EntrySkeleton = {
-  contentTypeId: 'workList';
-  fields: {
-    categoryName: contentful.EntryFieldTypes.Text;
-  };
-};
+import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from 'contentful';
 
 export interface TypeWorkListFields {
-  contentTypeId: 'workList';
-  fields: {
-    title?: contentful.EntryFieldTypes.Symbol;
-    subTitle?: contentful.EntryFieldTypes.Symbol;
-    featuredImage?: contentful.EntryFieldTypes.AssetLink;
-    technologiesUsed?: contentful.EntryFieldTypes.Symbol[];
-    websiteLink?: contentful.EntryFieldTypes.Symbol;
-    githubLink?: contentful.EntryFieldTypes.Symbol;
-    right?: contentful.EntryFieldTypes.Boolean;
-  };
+  title?: EntryFieldTypes.Symbol;
+  subTitle?: EntryFieldTypes.Symbol;
+  featuredImage?: EntryFieldTypes.AssetLink;
+  technologiesUsed?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+  websiteLink?: EntryFieldTypes.Symbol;
+  githubLink?: EntryFieldTypes.Symbol;
+  right?: EntryFieldTypes.Boolean;
 }
 
-// export type TypeWorkList = EntrySkeleton<TypeWorkListFields>;
+export type TypeWorkListSkeleton = EntrySkeletonType<TypeWorkListFields, 'workList'>;
+export type TypeWorkList<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeWorkListSkeleton, Modifiers, Locales>;

@@ -3,29 +3,20 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Work } from '..';
 import type { RefProps } from '@/types';
 
-import { TypeWorkList } from '@/types/contentful';
-import { getAllWorkList } from '@/lib/api';
+import { fetchWorkList, type WorkList } from '@/lib/contentful';
 
 export const Works: React.FC<RefProps> = ({ parentRef }) => {
-  const [workData, setWorkData] = useState<TypeWorkList[]>([]);
+  const [workData, setWorkData] = useState<WorkList[]>([]);
   const { scrollYProgress } = useScroll({ target: parentRef });
   const bgColor = useTransform(scrollYProgress, [0, 0.5], ['#ffffff', '#000000']);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await getAllWorkList();
+        const response = await fetchWorkList({ preview: false });
+        console.log(response);
 
-        const mappedData: TypeWorkList[] = response.map((item: TypeWorkList<any>) => ({
-          title: item.fields.title,
-          subTitle: item.fields.subTitle,
-          featuredImage: item.fields.featuredImage?.fields.file.url,
-          githubLink: item.fields.githubLink,
-          websiteLink: item.fields.websiteLink,
-          right: item.fields.right,
-        }));
-
-        setWorkData(mappedData);
+        setWorkData(response);
       } catch (error) {
         console.error('Error fetching data from Contentful:', error);
       }
@@ -33,6 +24,8 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
 
     fetchData();
   }, []);
+
+  console.log(workData);
 
   return (
     <motion.section
@@ -51,7 +44,7 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
             parentRef={parentRef}
             title={workData.title}
             subTitle={workData.subTitle}
-            image={workData.featuredImage}
+            image={workData.featuredImage!.src}
             website={workData.websiteLink}
             github={workData.githubLink}
             right={workData.right}

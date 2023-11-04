@@ -1,20 +1,18 @@
-import type { Asset, Entry, EntryFields } from 'contentful';
+import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
 export interface TypeCaseStudyFields {
-  contentTypeId: 'caseStudy';
-  fields: {
-    title?: EntryFields.Symbol;
-    subTitle?: EntryFields.Symbol;
-    client?: EntryFields.Symbol;
-    description?: EntryFields.RichText;
-    why?: EntryFields.RichText;
-    problem?: EntryFields.RichText;
-    solution?: EntryFields.RichText;
-    challenge?: EntryFields.RichText;
-    technologiesUsed?: EntryFields.Symbol[];
-    featuredImage?: Asset;
-    screenshots?: Asset[];
-  };
+    title?: EntryFieldTypes.Symbol;
+    subTitle?: EntryFieldTypes.Symbol;
+    client?: EntryFieldTypes.Symbol;
+    description?: EntryFieldTypes.RichText;
+    why?: EntryFieldTypes.RichText;
+    problem?: EntryFieldTypes.RichText;
+    solution?: EntryFieldTypes.RichText;
+    challenge?: EntryFieldTypes.RichText;
+    technologiesUsed?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+    featuredImage?: EntryFieldTypes.AssetLink;
+    screenshots?: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
 }
 
-export type TypeCaseStudy = Entry<TypeCaseStudyFields>;
+export type TypeCaseStudySkeleton = EntrySkeletonType<TypeCaseStudyFields, "caseStudy">;
+export type TypeCaseStudy<Modifiers extends ChainModifiers, Locales extends LocaleCode> = Entry<TypeCaseStudySkeleton, Modifiers, Locales>;
