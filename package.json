@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "cf-export": "contentful space export --config contentful/export-config.json --management-token CFPAT-er3KAY3I5R17Uh5rhCup-Vgm0iNtQn_U8maTC_L8XKA --space-id 3n2q8jc5ojld",
-    "cf-generate-types": "cf-content-types-generator -s 3n2q8jc5ojld -t CFPAT-er3KAY3I5R17Uh5rhCup-Vgm0iNtQn_U8maTC_L8XKA --out types/contentful"
+    "cf-generate-types": "cf-content-types-generator contentful/export.json --out types/contentful"
   },
   "dependencies": {
     "contentful": "^10.6.5",
