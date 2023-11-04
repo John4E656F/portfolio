@@ -11,8 +11,6 @@
     "cf-generate-types": "cf-content-types-generator contentful/export.json --out types/contentful"
   },
   "dependencies": {
-    "contentful": "^10.6.5",
-    "contentful-cli": "^3.1.10",
     "framer-motion": "^10.16.4",
     "next": "14.0.0",
     "react": "^18.2.0",
@@ -23,7 +21,6 @@
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
-    "cf-content-types-generator": "^2.12.9",
     "eslint": "^8.52.0",
     "eslint-config-next": "14.0.0",
     "postcss": "^8.4.31",
