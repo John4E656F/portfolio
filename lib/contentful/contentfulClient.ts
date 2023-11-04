@@ -1,5 +1,4 @@
 import * as contentful from 'contentful';
-import { TypeWorkListSkeleton } from '@/types/contentful';
 
 const client = contentful.createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE!,
