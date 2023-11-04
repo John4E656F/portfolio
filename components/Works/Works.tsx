@@ -1,12 +1,30 @@
-import { RefObject } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Work } from '..';
 import type { RefProps } from '@/types';
-import workData from '@/data/works.json';
+
+import { fetchWorkList, type WorkList } from '@/lib/contentful';
 
 export const Works: React.FC<RefProps> = ({ parentRef }) => {
+  const [workData, setWorkData] = useState<WorkList[]>([]);
   const { scrollYProgress } = useScroll({ target: parentRef });
   const bgColor = useTransform(scrollYProgress, [0, 0.5], ['#ffffff', '#000000']);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetchWorkList({ preview: false });
+        console.log(response);
+
+        setWorkData(response);
+      } catch (error) {
+        console.error('Error fetching data from Contentful:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   console.log(workData);
 
   return (
@@ -26,9 +44,9 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
             parentRef={parentRef}
             title={workData.title}
             subTitle={workData.subTitle}
-            image={workData.image}
-            website={workData.website}
-            github={workData.github}
+            image={workData.featuredImage!.src}
+            website={workData.websiteLink}
+            github={workData.githubLink}
             right={workData.right}
           />
         ))}
