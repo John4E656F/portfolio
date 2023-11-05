@@ -30,10 +30,6 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
   useAnimationFrame((t, delta) => {
     let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-    /**
-     * This is what changes the direction of the scroll once we
-     * switch scrolling directions.
-     */
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
     } else if (velocityFactor.get() > 0) {
@@ -45,15 +41,13 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
     baseX.set(baseX.get() + moveBy);
   });
 
-  /**
-   * The number of times to repeat the child text should be dynamically calculated
-   * based on the size of the text and viewport. Likewise, the x motion value is
-   * currently wrapped between -20 and -45% - this 25% is derived from the fact
-   * we have four children (100% / 4). This would also want deriving from the
-   * dynamically generated number of children.
-   */
   return (
-    <div className='overflow-hidden m-0 tracking-tighter flex flex-nowrap whitespace-nowrap'>
+    <motion.div
+      initial={{ opacity: 0, y: 300 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeInOut', delay: 1.6 }}
+      className='overflow-hidden m-0 tracking-tighter flex flex-nowrap whitespace-nowrap'
+    >
       <motion.p className='text-5xl font-semibold flex flex-nowrap whitespace-nowrap pb-3' style={{ x }}>
         <span className='block'>{children}</span>
         <span className='block'>{children}</span>
@@ -66,6 +60,6 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) =>
         <span className='block'>{children}</span>
         <span className='block'>{children}</span>
       </motion.p>
-    </div>
+    </motion.div>
   );
 };

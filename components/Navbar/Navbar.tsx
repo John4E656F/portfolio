@@ -75,13 +75,13 @@ export const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.8 }}>
-            <a
+            <motion.a
               href='/JohnAndresCV.pdf'
               download
-              className='ml-3 py-2 pl-3 pr-2 text-center rounded hover:font-semibold bg-red-400 hover:bg-red-500 mt-5'
+              className='ml-3 py-2 pl-3 pr-2 text-center rounded text-white bg-black hover:bg-gray-200 hover:text-black mt-5'
             >
               Download Resume
-            </a>
+            </motion.a>
           </motion.li>
         </ul>
         <MenuToggle toggle={() => toggleOpen()} />

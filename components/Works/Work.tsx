@@ -21,7 +21,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
   const { scrollYProgress } = useScroll({ target: parentRef });
 
   const xLeftInput = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const xRightInput = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+  const xRightInput = useTransform(scrollYProgress, [0, 1], [-100, 0]);
 
   const xLeft = useSpring(xLeftInput, { stiffness: 100, damping: 30, restDelta: 0.001 });
   const xRight = useSpring(xRightInput, { stiffness: 100, damping: 30, restDelta: 0.001 });
