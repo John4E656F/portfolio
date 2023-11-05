@@ -18,7 +18,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
 
   return (
     <motion.ul
-      className='absolute bg-white top-10 right-0 p-5 md:hidden min:w-3/5 border border-gray-300 rounded-md overflow-hidden'
+      className='absolute bg-white top-14 right-0 p-5 md:hidden min:w-3/5 border border-gray-300 rounded-md overflow-hidden'
       id='navbar-menu'
       initial='closed'
       animate={isMenuOpen ? 'open' : 'closed'}
@@ -37,7 +37,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
       >
         <Link
           href='/assets/JohnAndresCV.pdf'
-          className='block whitespace-nowrap py-2 px-3 text-center rounded hover:font-semibold bg-red-400 hover:bg-red-500 mt-5'
+          className='block whitespace-nowrap py-2 px-3 text-center rounded text-white bg-black hover:bg-gray-200 hover:text-black mt-5'
           onClick={toggleMenu}
         >
           Download Resume
