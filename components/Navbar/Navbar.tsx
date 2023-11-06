@@ -2,37 +2,6 @@ import React, { useRef } from 'react';
 import { motion, useCycle } from 'framer-motion';
 import { Link, MenuToggle, MobileMenu, MenuItem } from '@/components';
 
-const heartbeat = {
-  initial: {
-    scale: 0,
-    opacity: 0,
-  },
-  grow: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      delay: 0.8,
-    },
-  },
-  animate: {
-    scale: [0.9, 1.09, 1, 1.09, 0.9],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-    },
-  },
-  rest: {
-    scale: 1,
-  },
-  hover: {
-    scale: 1,
-    transition: {
-      duration: 0.3,
-    },
-  },
-};
-
 export const Navbar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
