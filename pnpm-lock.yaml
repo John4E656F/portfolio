@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@contentful/rich-text-types':
+    specifier: ^16.3.0
+    version: 16.3.0
   contentful:
     specifier: ^10.6.5
     version: 10.6.5

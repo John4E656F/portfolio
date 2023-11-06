@@ -1,7 +1,29 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
+import { fetchCaseStudy, type CaseStudy } from '@/lib/contentful';
+interface CaseStudyPageParams {
+  id: string;
+}
+interface CaseStudyPageProps {
+  params: CaseStudyPageParams;
+}
 
-const CaseStudy = () => {
+const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
+  console.log(params.id);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const caseStudyResult = await fetchCaseStudy({ preview: false, id: params.id });
+        console.log(caseStudyResult);
+      } catch (error) {
+        console.error('Error fetching data from Contentful:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
   return (
     <section className='w-full flex flex-col items-center select-none bg-black  '>
       <div className='w-full flex flex-col items-center py-16 pb-20 text-white '>
