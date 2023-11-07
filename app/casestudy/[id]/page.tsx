@@ -52,7 +52,6 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
               <Image
                 src={formatContentfulImageUrl(caseStudyData.featuredImage!.src, 'https') || '/yesjob.JPG'}
                 alt='yesjob'
-                width={1000}
                 className='w-full max-w-4xl h-auto max-h-l object-fill grounded'
               />
             </div>
