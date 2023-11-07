@@ -10,7 +10,9 @@ export interface TypeCaseStudyFields {
     solution?: EntryFieldTypes.RichText;
     skillSet?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     technologiesUsed?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
-    uiux?: EntryFieldTypes.Text;
+    uiStrategy?: EntryFieldTypes.Text;
+    uiImage?: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
+    uxStrategy?: EntryFieldTypes.RichText;
     uxImage?: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
     development?: EntryFieldTypes.RichText;
     featuredImage?: EntryFieldTypes.AssetLink;

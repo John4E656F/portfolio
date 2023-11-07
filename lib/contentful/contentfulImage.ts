@@ -1,6 +1,7 @@
 import { Asset, AssetLink } from 'contentful';
 
 export interface ContentImage {
+  title: string;
   src: string;
   alt: string;
   width: number;
@@ -17,6 +18,7 @@ export function parseContentfulContentImage(asset?: Asset<undefined, string> | {
   }
 
   return {
+    title: asset.fields.title || '',
     src: asset.fields.file?.url || '',
     alt: asset.fields.description || '',
     width: asset.fields.file?.details.image?.width || 0,
@@ -39,6 +41,7 @@ export function parseContentfulContentImagesArray(assets?: (Asset<undefined, str
     }
 
     return {
+      title: asset.fields.title || '',
       src: asset.fields.file?.url || '',
       alt: asset.fields.description || '',
       width: asset.fields.file?.details.image?.width || 0,

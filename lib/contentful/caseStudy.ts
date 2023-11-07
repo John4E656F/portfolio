@@ -16,7 +16,9 @@ export interface CaseStudy {
   solution: RichTextDocument | null;
   skillSet: string[];
   techUsed: string[];
-  uxui: string;
+  uiStrategy: string;
+  uiImage: ContentImage[] | null;
+  uxStrategy: RichTextDocument | null;
   uxImage: ContentImage[] | null;
   development: RichTextDocument | null;
   featuredImage: ContentImage | null;
@@ -40,7 +42,9 @@ export function parseContentfulCaseStudy(caseStudyEntry?: CaseStudyEntry): CaseS
     solution: caseStudyEntry.fields.solution || null,
     skillSet: caseStudyEntry.fields.skillSet || [],
     techUsed: caseStudyEntry.fields.technologiesUsed || [],
-    uxui: caseStudyEntry.fields.uiux || '',
+    uiStrategy: caseStudyEntry.fields.uiStrategy || '',
+    uiImage: parseContentfulContentImagesArray(caseStudyEntry.fields.uiImage),
+    uxStrategy: caseStudyEntry.fields.uxStrategy || null,
     uxImage: parseContentfulContentImagesArray(caseStudyEntry.fields.uxImage),
     development: caseStudyEntry.fields.development || null,
     featuredImage: parseContentfulContentImage(caseStudyEntry.fields.featuredImage),
