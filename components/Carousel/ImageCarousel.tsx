@@ -48,8 +48,8 @@ export const ImageCarousel = ({ images }: { images: ImagesProps[] }) => {
             )}
           </AnimatePresence>
           <motion.div
-            className='flex gap-4 flex-nowrap w-1/2'
-            animate={{ x: `calc(35% - ${current * 100}%)` }}
+            className='flex gap-4 flex-nowrap w-4/5'
+            animate={{ x: `calc(10% - ${current * 100}%)` }}
             onHoverStart={() => setIsFocus(true)}
             onHoverEnd={() => setIsFocus(false)}
           >
