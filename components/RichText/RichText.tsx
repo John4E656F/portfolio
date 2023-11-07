@@ -10,5 +10,5 @@ export function RichText({ document }: RichTextProps) {
     return null;
   }
 
-  return <>{documentToReactComponents(document)}</>;
+  return <div className='flex flex-col gap-5'>{documentToReactComponents(document)}</div>;
 }

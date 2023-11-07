@@ -5,7 +5,7 @@ export interface TypeCaseStudyFields {
     subTitle?: EntryFieldTypes.Symbol;
     tags?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
     programmingLanguage?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
-    overview?: EntryFieldTypes.Text;
+    overview?: EntryFieldTypes.RichText;
     problem?: EntryFieldTypes.RichText;
     solution?: EntryFieldTypes.RichText;
     skillSet?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;

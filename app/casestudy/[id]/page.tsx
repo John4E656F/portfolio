@@ -1,9 +1,8 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { fetchCaseStudy, type CaseStudy } from '@/lib/contentful';
 import { notFound } from 'next/navigation';
-import { RichText } from '@/components';
+import { RichText, Image } from '@/components';
 
 interface CaseStudyPageParams {
   id: string;
@@ -36,33 +35,37 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
     <section className='w-full flex flex-col items-center select-none bg-black  '>
       {caseStudyData && (
         <>
-          {' '}
           <div className='w-full flex flex-col items-center py-16 pb-20 text-white '>
-            <div className='container flex flex-col md:flex-row justify-between '>
-              <div className='self-end flex flex-col gap-10 text-center'>
+            <div className='container flex flex-col md:flex-row justify-between gap-5'>
+              <div className='md:self-end sm:self-center flex flex-col gap-10 text-center'>
                 <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold'>{caseStudyData.title}</h1>
                 <h2 className='text-xl sm:text-2xl md:text-4xl'>{caseStudyData.subTitle}</h2>
-                <ol className='flex justify-center gap-2'>
+                <ol className='flex flex-row flex-wrap justify-center gap-2'>
                   {caseStudyData.tags.map((tag, i) => (
-                    <li key={i} className='bg-white py-1 px-3 text-black rounded-md'>
+                    <li key={i} className='list-none flex items-center bg-white py-1 px-3 text-black rounded-md'>
                       {tag}
                     </li>
                   ))}
                 </ol>
               </div>
-              <Image src='/yesjob.JPG' alt='yesjob' width={450} height={500} className='rounded max-w-lg' />
+              <Image src='/yesjob.JPG' alt='yesjob' width={1000} className='w-full max-w-4xl h-auto max-h-l object-fill grounded' />
             </div>
           </div>
           <div className='w-full flex flex-col items-center justify-center py-20 gap-20 bg-white'>
-            <div className='flex flex-col w-3/5 gap-20'>
+            <div className='flex flex-col w-4/5 lg:w-3/5 gap-20'>
               <div className='flex flex-col gap-10'>
                 <h3 className='text-2xl sm:text-3xl font-semibold'>Overview</h3>
-                <div className='text-lg'>{caseStudyData.overview}</div>
+                <RichText document={caseStudyData.overview} />
               </div>
-
-              <div className='flex flex-col gap-10'>
-                <h3 className='text-2xl sm:text-3xl font-semibold'>Problem</h3>
-                <RichText document={caseStudyData.problem} />
+              <div className='flex flex-col md:flex-row  gap-5'>
+                <div className='flex flex-col gap-10'>
+                  <h3 className='text-2xl sm:text-3xl font-semibold'>Problem</h3>
+                  <RichText document={caseStudyData.problem} />
+                </div>
+                <div className='flex flex-col gap-10'>
+                  <h3 className='text-2xl sm:text-3xl font-semibold'>Solution</h3>
+                  <RichText document={caseStudyData.solution} />
+                </div>
               </div>
             </div>
           </div>

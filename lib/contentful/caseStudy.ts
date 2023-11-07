@@ -11,7 +11,7 @@ export interface CaseStudy {
   subTitle: string;
   tags: string[];
   programmingLanguage: string[];
-  overview: string;
+  overview: RichTextDocument | null;
   problem: RichTextDocument | null;
   solution: RichTextDocument | null;
   skillSet: string[];
@@ -35,7 +35,7 @@ export function parseContentfulCaseStudy(caseStudyEntry?: CaseStudyEntry): CaseS
     subTitle: caseStudyEntry.fields.subTitle || '',
     tags: caseStudyEntry.fields.tags || [],
     programmingLanguage: caseStudyEntry.fields.programmingLanguage || [],
-    overview: caseStudyEntry.fields.overview || '',
+    overview: caseStudyEntry.fields.overview || null,
     problem: caseStudyEntry.fields.problem || null,
     solution: caseStudyEntry.fields.solution || null,
     skillSet: caseStudyEntry.fields.skillSet || [],
