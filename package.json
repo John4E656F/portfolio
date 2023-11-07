@@ -8,12 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "cf-export": "contentful space export --config contentful/export-config.json --management-token CFPAT-er3KAY3I5R17Uh5rhCup-Vgm0iNtQn_U8maTC_L8XKA --space-id 3n2q8jc5ojld",
-    "cf-generate-types": "cf-content-types-generator contentful/export.json --out types/content",
+    "cf-generate-types": "cf-content-types-generator --v10 --out types/contentful",
     "next": "14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.19.0",
+    "@contentful/rich-text-types": "^16.3.0",
     "contentful": "^10.6.5",
     "contentful-cli": "^3.1.10",
     "framer-motion": "^10.16.4",

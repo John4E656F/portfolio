@@ -9,6 +9,27 @@
   box-sizing: border-box;
 }
 
+ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ol p,
+ul p {
+  display: inline;
+}
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+ul li ul {
+  list-style-type: circle;
+  margin-left: 10px;
+}
+
 @layer utilities {
   @variants responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */

@@ -18,7 +18,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
 
   return (
     <motion.ul
-      className='absolute bg-white top-14 right-0 p-5 md:hidden min:w-3/5 border border-gray-300 rounded-md overflow-hidden'
+      className='absolute list-none bg-white top-14 right-0 p-5 md:hidden min:w-3/5 border border-gray-300 rounded-md overflow-hidden'
       id='navbar-menu'
       initial='closed'
       animate={isMenuOpen ? 'open' : 'closed'}
