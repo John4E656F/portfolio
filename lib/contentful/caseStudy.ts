@@ -25,6 +25,7 @@ export interface CaseStudy {
   screenshots: ContentImage[] | null;
   websiteLink: string;
   githubLink: string;
+  closingThoughts: RichTextDocument | null;
 }
 
 export function parseContentfulCaseStudy(caseStudyEntry?: CaseStudyEntry): CaseStudy | null {
@@ -51,6 +52,7 @@ export function parseContentfulCaseStudy(caseStudyEntry?: CaseStudyEntry): CaseS
     screenshots: parseContentfulContentImagesArray(caseStudyEntry.fields.screenshots),
     websiteLink: caseStudyEntry.fields.websiteLink || '',
     githubLink: caseStudyEntry.fields.githubLink || '',
+    closingThoughts: caseStudyEntry.fields.closingThoughts || null,
   };
 }
 

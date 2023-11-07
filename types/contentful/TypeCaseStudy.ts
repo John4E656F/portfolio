@@ -18,6 +18,7 @@ export interface TypeCaseStudyFields {
     featuredImage?: EntryFieldTypes.AssetLink;
     screenshots?: EntryFieldTypes.Array<EntryFieldTypes.AssetLink>;
     reference?: EntryFieldTypes.EntryLink<EntrySkeletonType>;
+    closingThoughts?: EntryFieldTypes.RichText;
     websiteLink?: EntryFieldTypes.Symbol;
     githubLink?: EntryFieldTypes.Symbol;
 }
