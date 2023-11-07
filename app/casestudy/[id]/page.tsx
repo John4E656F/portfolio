@@ -131,13 +131,14 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
             <div className='flex flex-col w-4/5 lg:w-3/5 gap-5'>
               <h3 className='text-2xl sm:text-3xl font-semibold'>Development Process</h3>
               <RichText document={caseStudyData.development} />
+
+              {caseStudyData.screenshots ? (
+                <ImageCarousel images={caseStudyData.screenshots} />
+              ) : (
+                // Handle the case where caseStudyData.screenshots is null
+                <p>No screenshots available</p>
+              )}
             </div>
-            {caseStudyData.screenshots ? (
-              <ImageCarousel images={caseStudyData.screenshots} />
-            ) : (
-              // Handle the case where caseStudyData.screenshots is null
-              <p>No screenshots available</p>
-            )}
           </div>
         </>
       )}

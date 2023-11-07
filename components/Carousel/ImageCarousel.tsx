@@ -29,9 +29,9 @@ export const ImageCarousel = ({ images }: { images: ImagesProps[] }) => {
   };
 
   return (
-    <div className='flex flex-col items-center justify-between min-h-screen p-24'>
+    <div className='flex flex-col items-center justify-between'>
       <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
-        <div className='relative w-full h-56 overflow-hidden flex '>
+        <div className='relative w-full max-w-[1500px] flex items-center overflow-hidden'>
           <AnimatePresence>
             {isFocus && (
               <motion.div
@@ -48,8 +48,8 @@ export const ImageCarousel = ({ images }: { images: ImagesProps[] }) => {
             )}
           </AnimatePresence>
           <motion.div
-            className='flex gap-4 flex-nowrap'
-            animate={{ x: `calc(-${current * 100}% - ${current}rem)` }}
+            className='flex gap-4 flex-nowrap w-1/2'
+            animate={{ x: `calc(35% - ${current * 100}%)` }}
             onHoverStart={() => setIsFocus(true)}
             onHoverEnd={() => setIsFocus(false)}
           >
@@ -59,11 +59,11 @@ export const ImageCarousel = ({ images }: { images: ImagesProps[] }) => {
                 src={formatContentfulImageUrl(image!.src, 'https')}
                 alt='Yes Job UX UI Strategy, Color Palette and Font'
                 width={1000}
-                className='aspect-[16/9] object-cover'
+                className=' object-contain border'
               />
             ))}
           </motion.div>
-          <div className='absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10'>
+          <div className='absolute left-1/2 transform -translate-x-1/2 z-10 place-self-end'>
             <div className='flex gap-3 px-3 py-2 bg-gray-400 rounded-full opacity-80'>
               {[...images].map((_, idx) => (
                 <button key={idx} onClick={() => setCurrent(idx)}>
