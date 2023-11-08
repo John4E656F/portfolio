@@ -90,7 +90,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
                   stiffness: 400,
                   damping: 17,
                   duration: 3,
-                  delay: isInView ? 1 : 0,
+                  delay: isInView ? 2 : 0,
                   ease: [0.17, 0.55, 0.55, 1],
                 }}
               >
@@ -115,7 +115,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
                   stiffness: 400,
                   damping: 17,
                   duration: 3,
-                  delay: isInView ? 1 : 0,
+                  delay: isInView ? 2 : 0,
                   ease: [0.17, 0.55, 0.55, 1],
                 }}
               >
@@ -130,9 +130,29 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
               </motion.a>
             )}
           </div>
-          <div>
-            <Link href={`/casestudy/${referenceId}`}>Case Study</Link>
-          </div>
+          <motion.div
+            initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+            animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 400,
+              damping: 17,
+              duration: 3,
+              delay: isInView ? 2.2 : 0,
+              ease: [0.17, 0.55, 0.55, 1],
+            }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              className='bg-gray-600 py-3 px-5 rounded-full'
+            >
+              <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl'>
+                Case Study
+              </Link>
+            </motion.div>
+          </motion.div>
         </motion.div>
         <div className='md:hidden flex justify-center items-center gap-5 pt-5 cursor-pointer'>
           {website && (
@@ -160,6 +180,29 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
               </motion.div>
             </motion.a>
           )}
+          <motion.div
+            initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+            animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 400,
+              damping: 17,
+              duration: 3,
+              delay: isInView ? 2.2 : 0,
+              ease: [0.17, 0.55, 0.55, 1],
+            }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              className='bg-gray-600 py-3 px-5 rounded-full'
+            >
+              <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl '>
+                Case Study
+              </Link>
+            </motion.div>
+          </motion.div>
           {github && (
             <motion.a
               href={github}
