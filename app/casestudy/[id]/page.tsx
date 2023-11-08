@@ -52,7 +52,7 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
               <Image
                 src={formatContentfulImageUrl(caseStudyData.featuredImage!.src, 'https') || '/yesjob.JPG'}
                 alt='yesjob'
-                className='w-full max-w-4xl h-auto max-h-l object-fill grounded'
+                className='w-full max-w-4xl h-auto max-h-l object-fill grounded overflow-hidden'
               />
             </div>
           </div>
@@ -90,7 +90,7 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
                       src={formatContentfulImageUrl(image!.src, 'https')}
                       alt='Yes Job UX UI Strategy, Color Palette and Font'
                       width={1000}
-                      className='w-full max-w-lg h-auto max-h-l object-fill  border'
+                      className='w-full max-w-lg h-auto max-h-l object-fill border overflow-hidden'
                     />
                   ))}
                 </div>
@@ -105,7 +105,7 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
                       src={formatContentfulImageUrl(image!.src, 'https')}
                       alt='Yes Job UX UI Strategy, Color Palette and Font'
                       width={1000}
-                      className='w-full max-w-lg h-auto max-h-l object-fill  border'
+                      className='w-full max-w-lg h-auto max-h-l object-fill border overflow-hidden'
                     />
                   ))}
                 </div>
