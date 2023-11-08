@@ -142,16 +142,18 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
               ease: [0.17, 0.55, 0.55, 1],
             }}
           >
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className='bg-gray-600 py-3 px-5 rounded-full'
-            >
-              <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl'>
-                Case Study
-              </Link>
-            </motion.div>
+            {referenceId && (
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className='bg-gray-600 py-3 px-5 rounded-full'
+              >
+                <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl'>
+                  Case Study
+                </Link>
+              </motion.div>
+            )}
           </motion.div>
         </motion.div>
         <div className='md:hidden flex justify-center items-center gap-5 pt-5 cursor-pointer'>
@@ -192,16 +194,18 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
               ease: [0.17, 0.55, 0.55, 1],
             }}
           >
-            <motion.div
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              className='bg-gray-600 py-3 px-5 rounded-full'
-            >
-              <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl '>
-                Case Study
-              </Link>
-            </motion.div>
+            {referenceId && (
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                className='bg-gray-600 py-3 px-5 rounded-full'
+              >
+                <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl '>
+                  Case Study
+                </Link>
+              </motion.div>
+            )}
           </motion.div>
           {github && (
             <motion.a
