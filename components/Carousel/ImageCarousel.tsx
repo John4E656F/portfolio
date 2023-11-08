@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Image } from '..';
 import { formatContentfulImageUrl } from '@/lib';
 import { AnimatePresence, MotionConfig, motion } from 'framer-motion';
+import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from 'react-icons/bs';
 
 interface ImagesProps {
   title: string;
@@ -42,8 +43,12 @@ export const ImageCarousel = ({ images }: { images: ImagesProps[] }) => {
                 onHoverStart={() => setIsFocus(true)}
                 onHoverEnd={() => setIsFocus(false)}
               >
-                <button onClick={onPrevClick}>Left</button>
-                <button onClick={onNextClick}>Right</button>
+                <button onClick={onPrevClick}>
+                  <BsFillArrowLeftCircleFill size={30} />
+                </button>
+                <button onClick={onNextClick}>
+                  <BsFillArrowRightCircleFill size={30} />
+                </button>
               </motion.div>
             )}
           </AnimatePresence>

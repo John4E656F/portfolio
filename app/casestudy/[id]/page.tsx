@@ -79,8 +79,8 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
                 </ol>
               </div>
             </div>
-            <div className='flex flex-col w-4/5 lg:w-3/5 gap-5'>
-              <div>
+            <div className='flex flex-col w-4/5 lg:w-3/5 gap-20'>
+              <div className='flex flex-col gap-5'>
                 <h3 className='text-2xl sm:text-3xl font-semibold'>UI Strategy</h3>
                 <p>{caseStudyData.uiStrategy} </p>
                 <div className=' flex flex-col sm:flex-row justify-between gap-5'>
@@ -95,7 +95,7 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
                   ))}
                 </div>
               </div>
-              <div>
+              <div className='flex flex-col gap-5'>
                 <h3 className='text-2xl sm:text-3xl font-semibold'>UX Strategy</h3>
                 <RichText document={caseStudyData.uxStrategy} />
                 <div className=' flex flex-col sm:flex-row justify-between gap-5'>
@@ -122,7 +122,7 @@ const CaseStudy: React.FC<CaseStudyPageProps> = ({ params }) => {
                 <p>No screenshots available</p>
               )}
             </div>
-            <div className='container flex flex-col gap-10'>
+            <div className='flex flex-col w-4/5 lg:w-3/5 gap-10'>
               <h3 className='text-2xl sm:text-3xl font-semibold'>Closing Thoughts</h3>
               <RichText document={caseStudyData.closingThoughts} />
             </div>
