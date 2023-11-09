@@ -46,6 +46,7 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
             github={workData.githubLink}
             right={workData.right}
             referenceId={workData.referenceId}
+            page={false}
           />
         ))}
       </div>
