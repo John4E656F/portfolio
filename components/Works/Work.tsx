@@ -64,9 +64,88 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
         >
           {subTitle}
         </motion.p>
-        {page && <div>Hello World</div>}
+        {page && (
+          <div>
+            <div className='flex justify-center items-center gap-5'>
+              {website && (
+                <motion.a
+                  href={website}
+                  target='_blank'
+                  initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+                  animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 17,
+                    duration: 3,
+                    delay: isInView ? 2 : 0,
+                    ease: [0.17, 0.55, 0.55, 1],
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className='bg-gray-600 p-3 rounded-full'
+                  >
+                    <AiFillEye size={50} />
+                  </motion.div>
+                </motion.a>
+              )}
+              {github && (
+                <motion.a
+                  href={github}
+                  target='_blank'
+                  initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+                  animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 400,
+                    damping: 17,
+                    duration: 3,
+                    delay: isInView ? 2 : 0,
+                    ease: [0.17, 0.55, 0.55, 1],
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                    className='bg-gray-600 p-3 rounded-full'
+                  >
+                    <AiFillGithub size={50} />
+                  </motion.div>
+                </motion.a>
+              )}
+            </div>
+            <motion.div
+              initial={{ scale: 0, translateY: '-200px', opacity: 0 }}
+              animate={isInView ? { scale: 1, translateY: '0px', opacity: 1 } : { scale: 0, translateY: '-200px', opacity: 0 }}
+              transition={{
+                type: 'spring',
+                stiffness: 400,
+                damping: 17,
+                duration: 3,
+                delay: isInView ? 2.2 : 0,
+                ease: [0.17, 0.55, 0.55, 1],
+              }}
+            >
+              {referenceId && (
+                <motion.div
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className='bg-gray-600 py-3 px-5 rounded-full'
+                >
+                  <Link href={`/casestudy/${referenceId}`} className='font-bold text-xl'>
+                    Case Study
+                  </Link>
+                </motion.div>
+              )}
+            </motion.div>
+          </div>
+        )}
       </div>
-
       <div ref={ref} className='relative flex flex-col items-center justify-center'>
         <motion.img
           src={image}
