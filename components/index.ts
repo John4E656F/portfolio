@@ -9,6 +9,7 @@ export { Hero } from './Hero/Hero';
 export { ParallaxText } from './ParallaxText/ParallaxText';
 export { Works } from './Works/Works';
 export { Work } from './Works/Work';
+export { WorkPageList } from './Works/WorkPageList';
 export { Contact } from './Contact/Contact';
 export { Image } from './Image/Image';
 export { RichText } from './RichText/RichText';

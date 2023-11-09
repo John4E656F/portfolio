@@ -69,7 +69,5 @@ export async function fetchCaseStudy({ preview, id }: CaseStudyOptions): Promise
     include: 2,
   });
 
-  console.log(caseStudyResult);
-
   return parseContentfulCaseStudy(caseStudyResult.items[0])!;
 }

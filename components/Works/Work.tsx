@@ -70,7 +70,7 @@ export const Work: React.FC<WorkProps> = ({ parentRef, title, subTitle, image, w
           animate={isInView ? 'visible' : 'hidden'}
           variants={imageVariant}
           transition={{ duration: 2, ease: 'easeOut' }}
-          className='rounded w-full max-w-2xl'
+          className='rounded w-full max-w-2xl h-full max-h-80 object-fill'
         />
         <motion.div
           initial={{ opacity: 0 }}

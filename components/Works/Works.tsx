@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Work } from '..';
 import type { RefProps } from '@/types';
 
-import { fetchWorkList, type WorkList } from '@/lib/contentful';
+import { fetchFeaturedWorkList, type WorkList } from '@/lib/contentful';
 
 export const Works: React.FC<RefProps> = ({ parentRef }) => {
   const [workData, setWorkData] = useState<WorkList[]>([]);
@@ -13,7 +13,7 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetchWorkList({ preview: false });
+        const response = await fetchFeaturedWorkList({ preview: false });
         setWorkData(response);
       } catch (error) {
         console.error('Error fetching data from Contentful:', error);
@@ -22,6 +22,7 @@ export const Works: React.FC<RefProps> = ({ parentRef }) => {
 
     fetchData();
   }, []);
+  console.log(workData);
 
   return (
     <motion.section

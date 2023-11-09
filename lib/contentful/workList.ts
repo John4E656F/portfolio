@@ -13,6 +13,7 @@ export interface WorkList {
   websiteLink: string;
   githubLink: string;
   right: boolean;
+  featured: boolean;
   referenceId: string;
 }
 
@@ -29,6 +30,7 @@ export function parseContentfulWorkList(workListEntry?: WorkListEntry): WorkList
     websiteLink: workListEntry.fields.websiteLink || '',
     githubLink: workListEntry.fields.githubLink || '',
     right: workListEntry.fields.right || false,
+    featured: workListEntry.fields.featured || false,
     referenceId: workListEntry.fields.reference?.sys.id || '',
   };
 }
@@ -42,6 +44,17 @@ export async function fetchWorkList({ preview }: FetchWorkListOptions): Promise<
   const workListResult = await contentful.getEntries<TypeWorkListSkeleton>({
     content_type: 'workList',
   });
+
+  return workListResult.items.map((workListEntry) => parseContentfulWorkList(workListEntry) as WorkList);
+}
+
+export async function fetchFeaturedWorkList({ preview }: FetchWorkListOptions): Promise<WorkList[]> {
+  const contentful = contentfulClient({ preview });
+  const workListResult = await contentful.getEntries<TypeWorkListSkeleton>({
+    content_type: 'workList',
+    'fields.featured': true,
+  });
+
   console.log(workListResult);
 
   return workListResult.items.map((workListEntry) => parseContentfulWorkList(workListEntry) as WorkList);
