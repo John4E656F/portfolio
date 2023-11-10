@@ -27,8 +27,8 @@ const WorksPage = () => {
   console.log(workData);
 
   return (
-    <div ref={ref} className='w-full flex flex-col items-center'>
-      <div className='container w-full flex flex-col py-16 pb-20 gap-20 bg-red-300'>
+    <div ref={ref} className='w-full flex flex-col items-center bg-black text-white'>
+      <div className='container w-full flex flex-col py-16 pb-20 gap-20'>
         <h3 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>All my projects</h3>
         {workData.map((workData, index) => (
           <Work
@@ -40,8 +40,9 @@ const WorksPage = () => {
             website={workData.websiteLink}
             github={workData.githubLink}
             right={workData.right}
+            techStack={workData.technologiesUsed}
             referenceId={workData.referenceId}
-            page={true}
+            page={false}
           />
         ))}
       </div>
