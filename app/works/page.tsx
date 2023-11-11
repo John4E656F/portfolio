@@ -24,7 +24,6 @@ const WorksPage = () => {
 
     fetchData();
   }, []);
-  console.log(workData);
 
   return (
     <div ref={ref} className='w-full flex flex-col items-center bg-black text-white'>

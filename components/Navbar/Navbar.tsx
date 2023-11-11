@@ -30,7 +30,7 @@ export const Navbar = () => {
             </Link>
           </motion.li>
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}>
-            <Link href='#works' className='block text-center py-2 px-3 hover:font-semibold text-black rounded hover:bg-gray-100' aria-current='page'>
+            <Link href='/works' className='block text-center py-2 px-3 hover:font-semibold text-black rounded hover:bg-gray-100' aria-current='page'>
               Work
             </Link>
           </motion.li>

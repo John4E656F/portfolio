@@ -27,7 +27,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
       style={{ transformOrigin: 'top right' }}
     >
       <MenuItem href='/' onClick={toggleMenu} text='Home' delay={0.2} />
-      <MenuItem href='/work' onClick={toggleMenu} text='Work' delay={0.4} />
+      <MenuItem href='/works' onClick={toggleMenu} text='Work' delay={0.4} />
       <MenuItem href='/contact' onClick={toggleMenu} text='Contact' delay={0.6} />
       <motion.li
         initial={{ opacity: 0, y: 50 }}
