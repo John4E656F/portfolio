@@ -10,7 +10,7 @@ export const Contact = () => {
         </a>
         <div className='flex justify-center gap-10'>
           <a href='https://www.linkedin.com/in/john4e656f/' target='_blank'>
-            <BsLinkedin color='blue' />
+            <BsLinkedin />
           </a>
           <a href='https://www.linkedin.com/in/john4e656f/' target='_blank'>
             <BsGithub />
