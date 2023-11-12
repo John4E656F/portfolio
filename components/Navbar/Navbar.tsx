@@ -25,7 +25,7 @@ export const Navbar = () => {
         </motion.h1>
         <ul className='hidden md:flex gap-2 items-center list-none'>
           <motion.li initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}>
-            <Link href='#home' className=' hover:font-semibold' aria-current='page'>
+            <Link href='/home' className=' hover:font-semibold' aria-current='page'>
               Home
             </Link>
           </motion.li>
